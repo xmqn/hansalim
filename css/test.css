@@ -38,56 +38,6 @@ body {
     word-break: break-all;
 }
 
-/* 모달창 */
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
-
-    display: none;
-}
-
-.modal-cont {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    border-radius: 2rem;
-    width: 50rem;
-    height: 20rem;
-    background-color: #fff;
-}
-
-.modal-cont p {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #333;
-    line-height: 1.4;
-    white-space: nowrap;
-
-}
-
-.modal-close {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    border: 0;
-    background-color: #fff;
-    color: #000;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
 /* 공통 클래스 */
 .container {
     position: relative;
@@ -113,19 +63,22 @@ body {
 }
 
 /* 우측 고정 메뉴 */
+
 .fix-menu {
     position: fixed;
     right: 0;
     top: 17.5rem;
     display: block;
     width: 8.5rem;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background: #fff;
+    border: 0.1rem solid #ddd;
     box-shadow: 0 4px 9px 0 rgb(0 0 0 / 10%);
     border-radius: 2rem;
     z-index: 9;
     padding-top: 2rem;
+
     overflow: hidden;
+
     text-align: center;
 }
 
@@ -147,11 +100,11 @@ body {
 .fix-menu ul>li>a {
     position: relative;
     display: block;
+    color: #000;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #000;
-    letter-spacing: -0.0325rem;
     line-height: 1.461;
+    letter-spacing: -0.0325rem;
 }
 
 .i-login::after {
@@ -181,7 +134,7 @@ body {
     position: relative;
     display: block;
     width: 3.6rem;
-    height: 3.0rem;
+    height: 3rem;
     background: url('../images/icoFloating.png') no-repeat;
     background-position: 0 -6.4rem;
     margin: 0 auto;
@@ -202,7 +155,6 @@ body {
     margin-top: 0.5rem;
 }
 
-
 .fix-menu ul>li>a>img {
     width: 5rem;
     height: 5rem;
@@ -212,13 +164,12 @@ body {
     position: relative;
     display: block;
     width: 100%;
-
-    background-color: #000;
+    background: #000;
     border: none;
     color: #fff;
-    line-height: 3rem;
     font-size: 1.1rem;
     font-weight: 400;
+    line-height: 3rem;
     letter-spacing: -0.0275rem;
     border-radius: 0 0 2rem 2rem;
     cursor: pointer;
@@ -227,7 +178,7 @@ body {
     margin-top: 2rem;
 }
 
-/* 전체레이 아웃 */
+/* 전체 레이아웃 */
 .wrap {
     position: relative;
     display: block;
@@ -239,21 +190,6 @@ body {
     display: block;
     border-bottom: 0.1rem solid #ddd;
     z-index: 999;
-}
-
-.header-fix {
-    position: fixed;
-    left: 0;
-    top: -7rem;
-
-    display: block;
-    width: 100%;
-    background-color: #fff;
-}
-
-.body-fix {
-    padding-top: 11rem;
-
 }
 
 .header-top {
@@ -318,10 +254,6 @@ body {
     color: #666;
 }
 
-.mymenu>li:last-child>a {
-    padding-right: 0;
-}
-
 .mymenu>li:before {
     content: '';
     position: absolute;
@@ -338,29 +270,26 @@ body {
 }
 
 .mymenu>li:nth-child(3)>a {
-    /* padding-right: 2.6rem; */
+    padding-right: 2.6rem;
 }
 
 .mymenu>li:nth-child(3)>a::after {
     content: '';
-    position: relative;
-    display: inline-block;
-
+    position: absolute;
+    right: 0.5rem;
+    top: 0.6rem;
     width: 1rem;
     height: 0.6rem;
     background: url(../images/icoMyMenu.png)no-repeat right top;
     background-position: 0px 0px;
 
-    /* margin-right: 0.5rem; */
+    margin-right: 0.5rem;
 }
-
-.center-menu-active::after {}
 
 .center-submenu {
     position: absolute;
     left: 50%;
     top: 2.5rem;
-    display: none;
     z-index: 3;
     margin-left: 0.5rem;
     padding: 1rem 2rem 2rem 2rem;
@@ -369,6 +298,7 @@ body {
     box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
     transform: translateX(-50%);
 
+    display: none;
 }
 
 .center-submenu>li {
@@ -405,6 +335,7 @@ body {
 .header-bottom {
     position: relative;
     display: block;
+    margin-bottom: 1rem;
 }
 
 .gnb-wrap {
@@ -491,11 +422,20 @@ body {
 
 .category-dot {}
 
+.category-list-more-active {
+    color: #76bd42 !important;
+}
+
+.category-list-more-active::after {
+    background-position: 0px -0.8rem;
+}
+
 .category-dot::after {
     content: '';
     position: absolute;
     top: -0.1rem;
     right: -0.7rem;
+    display: block;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
@@ -514,22 +454,14 @@ body {
     vertical-align: 0.2rem;
 }
 
-.category-list-more-active {
-    color: #76bd42 !important;
-}
-
-.category-list-more-active::after {
-    background-position: 0px -0.8rem;
-}
-
 .category-list-2 {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     top: 3.8rem;
+    transform: translateX(-50%);
     display: none;
     background-color: #fff;
-    padding: 1.5rem 2.0rem;
+    padding: 1.5rem 2rem;
     border: 0.1rem solid #ddd;
     box-shadow: 0 0.3rem 0.6rem 0 rgb(0 0 0 / 16%);
 }
@@ -560,7 +492,7 @@ body {
     left: 0;
     bottom: 0.5rem;
     width: 100%;
-    height: 1px;
+    height: 0.1rem;
     background-color: #000;
 }
 
@@ -577,7 +509,6 @@ body {
     font-weight: 400;
     letter-spacing: -0.0325rem;
     line-height: 1.9rem;
-
     text-align: right;
     width: 6rem;
 }
@@ -595,15 +526,14 @@ body {
     width: 1rem;
     height: 0.6rem;
     background: url('../images/icoGnbArr3.png') no-repeat;
-    background-position: 0 0;
-
+    background-position: 0px 0px;
     margin-left: 0.6rem;
     vertical-align: 0.2rem;
 }
 
 .see-more-bt-close {
     position: relative;
-    display: block;
+    display: none;
     color: #7abd42;
 }
 
@@ -614,12 +544,10 @@ body {
     width: 1rem;
     height: 0.6rem;
     background: url('../images/icoGnbArr3.png') no-repeat;
-    background-position: 0 -0.6rem;
-
+    background-position: 0px 0.6rem;
     margin-left: 0.6rem;
     vertical-align: 0.2rem;
 }
-
 
 .see-more-list {
     position: absolute;
@@ -664,20 +592,18 @@ body {
     background-color: #000;
 }
 
-
 .search-wrap {
     position: relative;
     display: block;
 }
 
+
 .search-form {
     position: relative;
     display: block;
     float: left;
-
     padding-left: 2.0rem;
     padding-right: 4.0rem;
-
     background-color: #f7f7f7;
     border-radius: 2rem;
     width: 32.5rem;
@@ -699,11 +625,12 @@ body {
     position: relative;
     display: block;
     border: none;
-    background-color: #f7f7f7;
+    background-color: none;
     color: #000;
     font-size: 1.3rem;
     line-height: 4rem;
     font-weight: 400;
+    background-color: #f7f7f7;
     width: 100%;
 }
 
@@ -724,10 +651,9 @@ body {
     float: left;
     width: 3.6rem;
     height: 4rem;
-    background: url('../images/btnCart.png') no-repeat;
-    background-position: left center;
+    background: url('../images/btnCart.png') no-repeat center;
+    background-position: 0px center;
     margin-left: 2.5rem;
-
 }
 
 .count {
@@ -738,7 +664,7 @@ body {
     width: 1.8rem;
     height: 1.8rem;
     border-radius: 50%;
-    background: #76bd42;
+    background-color: #76bd42;
     color: #fff;
     font-size: 1.1rem;
     font-weight: 700;
@@ -746,7 +672,6 @@ body {
     white-space: nowrap;
     line-height: 1.8rem;
 }
-
 
 /* 비주얼 영역 */
 .visual {
@@ -765,12 +690,12 @@ body {
 /* 필요할 때 사용 */
 .sw-visual {}
 
-/* 기본으로 이미 제공 되고 있다. */
+/* 기본으로 이미 제공되고 있다. */
 .swiper-wrapper {}
 
 .swiper-slide {}
 
-/* 각 슬라이드의 내용은 콘트롤 한다. */
+/* 각 슬라이드의 내용은 콘트롤한다. */
 .sw-visual .swiper-slide a {
     position: relative;
     display: block;
@@ -792,7 +717,7 @@ body {
 
 .sw-visual-prev:hover {
     background-position: 0 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -812,7 +737,7 @@ body {
 
 .sw-visual-next:hover {
     background-position: 0 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -829,7 +754,6 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-
     display: inline-block;
     width: 3rem;
     height: 3rem;
@@ -845,15 +769,12 @@ body {
 .swiper-pagination {}
 
 .sw-visual-pg {
-
-    left: 3.2rem;
-    bottom: 0rem;
-
+    left: 3.8rem;
+    bottom: 0;
     display: inline-block;
     width: 5.2rem;
     height: 3rem;
     background: url('../images/visualNum.png') no-repeat center;
-
     color: #fff;
     text-align: center;
     line-height: 3rem;
@@ -861,16 +782,15 @@ body {
 
 .sw-visual-more {
     position: absolute;
-    left: 8.6rem;
+    left: 9.2rem;
     bottom: 0rem;
-
     display: block;
     width: 2.9rem;
     height: 3rem;
     background: url('../images/visualMore.png') no-repeat center;
 }
 
-/* 추천상품 영역 */
+/* 상품 영역 */
 .recommend {
     position: relative;
     display: block;
@@ -905,8 +825,6 @@ body {
     float: left;
     width: 24.16%;
     margin-right: 1.12%;
-
-    overflow: hidden;
 }
 
 .good-list>li:last-child {
@@ -932,7 +850,6 @@ body {
     background-color: #f2f2f2;
     width: 100%;
     height: 29rem;
-
     overflow: hidden;
     margin: 0 auto;
     margin-bottom: 1.5rem;
@@ -944,7 +861,6 @@ body {
     top: 50%;
     transform: translate(-50%, -50%) scale(0.9);
     mix-blend-mode: multiply;
-
     transition: transform 0.5s;
 }
 
@@ -954,15 +870,14 @@ body {
 
 .good-box-pop {
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
     display: block;
     width: 5rem;
     height: 5rem;
     background-color: #76bd42;
     color: #fff;
     font-size: 1.5rem;
-    font-weight: 400;
     letter-spacing: -0.0375rem;
     line-height: 5rem;
     text-align: center;
@@ -972,7 +887,6 @@ body {
     position: relative;
     display: block;
     color: #000;
-
     font-size: 1.7rem;
     font-weight: 400;
     letter-spacing: -0.0425rem;
@@ -984,7 +898,6 @@ body {
     position: absolute;
     left: 0;
     bottom: 0rem;
-
     display: block;
     color: #000;
     font-size: 2.2rem;
@@ -1004,20 +917,17 @@ body {
     position: absolute;
     right: 2rem;
     bottom: 0;
-    display: block;
-
     width: 3rem;
     height: 3rem;
     background: url('../images/btnCartList.png') no-repeat;
     background-position: 0 0;
-
 }
 
 .good-box-cart:hover {
     background-position: 0 -3rem;
 }
 
-/* 알뜰물품 영역 */
+/* 알뜰상품 영역 */
 .sales {
     position: relative;
     display: block;
@@ -1048,26 +958,27 @@ body {
     margin-bottom: 2.5rem;
 }
 
+.sales-box-title b {
+    font-weight: 700;
+}
+
 .sales-box-title::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
+    display: block;
     width: 2rem;
     height: 0.2rem;
     background: #707070;
 }
 
-.sales-box-title b {
-    font-weight: 700;
-}
-
 .sales-box-txt {
     position: relative;
     display: block;
+    color: #000;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #000;
     letter-spacing: -0.0375rem;
     line-height: 1.6;
     margin-bottom: 2.5rem;
@@ -1077,18 +988,15 @@ body {
     position: relative;
     display: block;
     width: 11.4rem;
-
+    border: 0.1rem solid #ddd;
+    background: #fff;
+    transition: background-color 0.5s;
     text-align: center;
     color: #666;
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
-
-    border: 1px solid #bbb;
-    background-color: #fff;
-
-    transition: background-color 0.5s;
 }
 
 .sales-box-link:hover {
@@ -1098,7 +1006,7 @@ body {
 .sw-sales-control {
     position: absolute;
     left: 0;
-    top: 38rem;
+    top: 34.5rem;
     display: block;
 }
 
@@ -1138,15 +1046,15 @@ body {
     left: 2.6rem;
     top: 0;
     width: 9rem;
+    color: #bbb;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: -0.04rem;
-    color: #bbb;
 }
 
 .sw-sales-pg .swiper-pagination-current {
-    color: #222;
     font-weight: 700;
+    color: #222;
 }
 
 .sales-slide {
@@ -1163,7 +1071,7 @@ body {
 }
 
 .sw-sales .good-box-img {
-    background-color: #fff;
+    background: #fff;
 }
 
 .sw-sales .good-box-name {
@@ -1179,7 +1087,7 @@ body {
     bottom: 2rem;
 }
 
-/* 새물품 영역 */
+/* 새상품 영역 */
 .new {
     position: relative;
     display: block;
@@ -1206,21 +1114,19 @@ body {
     position: absolute;
     right: 0;
     bottom: 0;
-
     display: block;
     width: 11.4rem;
 
-    text-align: center;
     color: #666;
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
+    text-align: center;
 
-    border: 1px solid #bbb;
-    background-color: #fff;
-
+    border: 0.1rem solid #ddd;
     transition: background-color 0.5s;
+    background: #fff;
 }
 
 .new-link:hover {
@@ -1230,9 +1136,8 @@ body {
 .new-wrap {
     position: relative;
     display: block;
-
     padding-bottom: 4rem;
-    border-bottom: 1px solid #ededed;
+    border-bottom: 0.1rem solid #ededed;
 }
 
 .new-main {
@@ -1241,15 +1146,19 @@ body {
     width: 59rem;
 }
 
+.new-main>a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
 .new-main-img {
     position: relative;
     display: block;
-
     width: 100%;
     height: 37.5rem;
     overflow: hidden;
-
-    margin-bottom: 2.0rem;
+    margin-bottom: 2rem;
 }
 
 .new-main-img img {
@@ -1262,22 +1171,22 @@ body {
 .new-main-title {
     position: relative;
     display: inline-block;
+    color: #000;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #000;
     line-height: 1.48;
     letter-spacing: -0.0625rem;
     margin-bottom: 0.5rem;
-
 }
 
 .new-main-desc {
     position: relative;
     display: inline-block;
+    color: #000;
     font-size: 1.7rem;
     font-weight: 400;
-    letter-spacing: -0.0425rem;
     line-height: 1.48;
+    letter-spacing: -0.0425rem;
 }
 
 .new-list {
@@ -1304,7 +1213,7 @@ body {
     width: 100%;
     height: 18rem;
     overflow: hidden;
-    margin-bottom: 1.0rem;
+    margin-bottom: 1rem;
 }
 
 .new-good-img img {
@@ -1314,20 +1223,18 @@ body {
 
 .new-good-title {
     width: 100%;
-
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
+    color: #000;
     font-size: 1.7rem;
     font-weight: 500;
-    color: #000;
     line-height: 1.47;
     letter-spacing: -0.0425rem;
     margin-bottom: 1.5rem;
 }
 
-/* 추천물품 영역 */
+/* 추천상품 영역 */
 .pick {
     position: relative;
     display: block;
@@ -1345,9 +1252,9 @@ body {
 .pick-box-title {
     position: relative;
     display: block;
+    color: #000;
     font-size: 3.2rem;
     font-weight: 400;
-    color: #000;
     line-height: 1.25;
     letter-spacing: -0.08rem;
     padding-bottom: 2rem;
@@ -1362,13 +1269,13 @@ body {
     display: block;
     width: 2rem;
     height: 0.2rem;
-    background-color: #707070;
+    background: #707070;
 }
 
 .pick-box-title em {
+    color: #76bd42;
     font-weight: 700;
     font-style: normal;
-    color: #76bd42;
 }
 
 .pick-box-title b {
@@ -1378,11 +1285,12 @@ body {
 .pick-box-txt {
     position: relative;
     display: inline-block;
+    color: #333;
     font-size: 1.7rem;
     font-weight: 400;
-    color: #333;
-    letter-spacing: -0.0425rem;
     line-height: 1.7;
+    letter-spacing: -0.0425rem;
+
     margin-bottom: 2.5rem;
 }
 
@@ -1393,8 +1301,8 @@ body {
     bottom: 0;
     display: block;
     width: 100%;
-    height: 2px;
-    background-color: #76bc42;
+    height: 0.2rem;
+    background: #76bd42;
 }
 
 .sw-pick-control {
@@ -1412,11 +1320,11 @@ body {
     height: 2rem;
     background: url('../images/swiperArrP.png') no-repeat;
     background-position: 0 0;
-    cursor: pointer;
 }
 
 .sw-pick-prev:hover {
     background-position: 0 -2rem;
+    cursor: pointer;
 }
 
 .sw-pick-next {
@@ -1428,27 +1336,27 @@ body {
     height: 2rem;
     background: url('../images/swiperArrN.png') no-repeat;
     background-position: 0 0;
-    cursor: pointer;
 }
 
 .sw-pick-next:hover {
     background-position: 0 -2rem;
+    cursor: pointer;
 }
 
 .sw-pick-pg {
     left: 2.6rem;
     bottom: 0;
     width: 9rem;
+    color: #bbb;
     font-size: 1.6rem;
     font-weight: 400;
-    color: #bbb;
     line-height: 1.5;
     letter-spacing: -0.04rem;
 }
 
 .sw-pick-pg .swiper-pagination-current {
-    color: #222;
     font-weight: 700;
+    color: #222;
 }
 
 .pick-slide {
@@ -1465,7 +1373,7 @@ body {
 }
 
 .sw-pick .good-box-img {
-    background-color: #fff;
+    background: #fff;
 }
 
 .sw-pick .good-box-name {
@@ -1481,7 +1389,7 @@ body {
     bottom: 2rem;
 }
 
-/* 인기물품 영역 */
+/* 인기상품 영역 */
 .famous {
     position: relative;
     display: block;
@@ -1491,9 +1399,9 @@ body {
 .famous-title {
     position: relative;
     display: block;
+    color: #000;
     font-size: 3.2rem;
     font-weight: 400;
-    color: #000;
     line-height: 1.25;
     letter-spacing: -0.08rem;
 }
@@ -1506,21 +1414,19 @@ body {
     position: absolute;
     right: 0;
     bottom: 0;
-
     display: block;
     width: 12.8rem;
 
-    text-align: center;
     color: #666;
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
+    text-align: center;
 
-    border: 1px solid #bbb;
-    background-color: #fff;
-
+    border: 0.1rem solid #ddd;
     transition: background-color 0.5s;
+    background: #fff;
 }
 
 .famous-link:hover {
@@ -1545,13 +1451,13 @@ body {
     display: block;
     height: 100%;
     background-color: #f8f8f8;
-    border: 2px solid #f8f8f8;
+    border: 0.2rem solid #f8f8f8;
 
+    color: #000;
     font-size: 1.7rem;
     font-weight: 400;
-    letter-spacing: -0.0425rem;
     line-height: 1;
-    color: #000;
+    letter-spacing: -0.0425rem;
 
     padding-top: 10rem;
     text-align: center;
@@ -1562,15 +1468,15 @@ body {
     content: '';
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     top: 2rem;
+    transform: translateX(-50%);
     display: block;
     width: 6.5rem;
     height: 6.4rem;
 }
 
 .sw-famous .swiper-slide>a:hover {
-    border: 2px solid #76bd42;
+    border: 0.2rem solid #76bd42;
     background-color: #fff;
 }
 
@@ -1649,11 +1555,11 @@ body {
 }
 
 .sw-famous-prev {
+    content: '';
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-
     display: block;
     width: 2.6rem;
     height: 2rem;
@@ -1667,11 +1573,11 @@ body {
 }
 
 .sw-famous-next {
+    content: '';
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-
     display: block;
     width: 2.6rem;
     height: 2rem;
@@ -1700,7 +1606,8 @@ body {
 
 .good-box-special span {
     display: inline-block;
-    border: 1px solid #e5e5e5;
+    border: 0.1rem solid #e5e5e5;
+    color: #888;
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.45;
@@ -1709,11 +1616,11 @@ body {
     padding: 0 0.7rem;
 }
 
-/* 브랜드관 영역 */
+/* 브랜드 영역 */
 .brand {
     position: relative;
     display: block;
-    padding: 8rem 0;
+    padding: 9rem 0;
     background-color: #f3f9f0;
 }
 
@@ -1723,7 +1630,6 @@ body {
     width: 30rem;
     height: 28.5rem;
 }
-
 
 .brand-box-title {
     position: relative;
@@ -1737,26 +1643,27 @@ body {
     margin-bottom: 2.5rem;
 }
 
+.brand-box-title b {
+    font-weight: 700;
+}
+
 .brand-box-title::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
+    display: block;
     width: 2rem;
     height: 0.2rem;
     background: #707070;
 }
 
-.brand-box-title b {
-    font-weight: 700;
-}
-
 .brand-box-txt {
     position: relative;
     display: block;
+    color: #000;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #000;
     letter-spacing: -0.0375rem;
     line-height: 1.6;
     margin-bottom: 2.5rem;
@@ -1766,18 +1673,15 @@ body {
     position: relative;
     display: block;
     width: 11.4rem;
-
+    border: 0.1rem solid #ddd;
+    background: #fff;
+    transition: background-color 0.5s;
     text-align: center;
     color: #666;
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: -0.0375rem;
     line-height: 3.4rem;
-
-    border: 1px solid #bbb;
-    background-color: #fff;
-
-    transition: background-color 0.5s;
 }
 
 .brand-box-link:hover {
@@ -1827,17 +1731,16 @@ body {
     left: 2.6rem;
     top: 0;
     width: 9rem;
+    color: #bbb;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: -0.04rem;
-    color: #bbb;
 }
 
 .sw-brand-pg .swiper-pagination-current {
-    color: #222;
     font-weight: 700;
+    color: #222;
 }
-
 
 .brand-slide {
     position: relative;
@@ -1872,30 +1775,27 @@ body {
 
 .active-box-name {
     display: block;
+    color: #000;
     font-size: 1.8rem;
     font-weight: 500;
-    color: #000;
-    letter-spacing: -0.045rem;
     line-height: 1.5;
-    margin-top: 1.5rem;
+    letter-spacing: -0.045rem;
 }
 
 .active-box-txt {
     position: relative;
     display: block;
-
-    width: 100%;
     overflow: hidden;
-
+    width: 100%;
     margin-top: 3rem;
 }
 
 .active-box-txt>li {
     position: relative;
     display: block;
-    width: 50%;
     float: left;
-    border-right: 1px solid #e2e2e2;
+    width: 50%;
+    border-right: 0.1rem solid #e2e2e2;
 }
 
 .active-box-txt>li:last-child {
@@ -1908,17 +1808,17 @@ body {
     color: #666;
     font-size: 1.6rem;
     font-weight: 400;
-    letter-spacing: -0.04rem;
     line-height: 1.5;
-    padding-top: 0.3rem;
+    letter-spacing: -0.04rem;
+    padding-top: 0.6rem;
 }
 
 .active-box-txt>li>dl>dd {
     color: #000;
     font-size: 1.8rem;
     font-weight: 500;
-    letter-spacing: -0.045rem;
     line-height: 1.5;
+    letter-spacing: -0.045rem;
     white-space: nowrap;
 }
 
@@ -1927,6 +1827,11 @@ body {
     position: relative;
     display: block;
     padding: 8rem 0;
+}
+
+.banner-slide {
+    position: relative;
+    display: block;
 }
 
 .sw-banner {
@@ -1953,7 +1858,7 @@ body {
     height: 3.4rem;
     background: url('../images/bannerArr.png') no-repeat center;
     background-position: 0 -3.4rem;
-    z-index: 999;
+    z-index: 10;
 }
 
 .sw-banner-prev:hover {
@@ -1971,7 +1876,7 @@ body {
     height: 3.4rem;
     background: url('../images/bannerArr.png') no-repeat center;
     background-position: 0 -3.4rem;
-    z-index: 999;
+    z-index: 10;
 }
 
 .sw-banner-next:hover {
@@ -2009,8 +1914,10 @@ body {
 
 .recipe-main {
     position: relative;
+    display: block;
     width: 79rem;
     height: 42rem;
+    overflow: hidden;
 }
 
 .recipe-main>a {
@@ -2018,7 +1925,7 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    background: url('../images/recipe-main.jpg') no-repeat center;
+    background: url('../images/recipe_main.jpg') no-repeat center;
 }
 
 .recipe-main-title {
@@ -2028,41 +1935,43 @@ body {
     display: block;
     width: 15.5rem;
     height: 15.5rem;
-    background-color: #76bc42;
-
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.0625rem;
-    line-height: 1;
-
+    background-color: #76bd42;
+    box-sizing: border-box;
     padding-left: 1.5rem;
     padding-top: 9.5rem;
+
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.0625rem;
 }
 
-.recipe-main-txt {
+.recipe-main-name {
     position: absolute;
     left: 15.5rem;
     bottom: 0;
     display: block;
     width: 49rem;
     height: 15.5rem;
-    background-color: rgba(255, 255, 255, 0.85);
+    background: rgb(255, 255, 255, 0.85);
 
+    color: #333;
     font-size: 2.5rem;
     font-weight: 400;
-    color: #333;
-    letter-spacing: -0.0375rem;
     line-height: 1.48;
+    letter-spacing: -0.0375rem;
 
     padding-left: 3rem;
     padding-top: 4rem;
 }
 
-.recipe-main-txt b {
+.recipe-main-name b {
+    color: #000;
     font-size: 3rem;
     font-weight: 700;
-    color: #000;
+    line-height: 1.5;
+    letter-spacing: -0.0375rem;
 }
 
 .recipe-con {
@@ -2087,6 +1996,7 @@ body {
     overflow: hidden;
 }
 
+
 .recipe-con-item {
     position: relative;
     display: block;
@@ -2102,6 +2012,7 @@ body {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    display: block;
     width: 1.8rem;
     height: 1.8rem;
     background: url('../images/inpCheck.png') no-repeat;
@@ -2138,16 +2049,15 @@ body {
 .recipe-con-txt {
     position: relative;
     display: block;
+    color: #000;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #000;
-    letter-spacing: -0.0375rem;
     line-height: 1.47;
+    letter-spacing: -0.0375rem;
     float: left;
     margin-left: 2rem;
     margin-top: 1rem;
 }
-
 
 .recipe-con-txt b {
     font-size: 2rem;
@@ -2166,13 +2076,15 @@ body {
     display: block;
     width: 100%;
     padding: 3.5rem 0;
+
+    color: #000;
     font-size: 2rem;
     font-weight: 400;
-    color: #000;
-    letter-spacing: -0.05rem;
-    line-height: 1;
+    line-height: 1.45;
+    letter-spacing: -0.0375rem;
     padding-left: 4rem;
-    border-top: 1px solid #ddd;
+
+    border-top: 0.1rem solid #eee;
 }
 
 .recipe-con-count::before {
@@ -2181,6 +2093,7 @@ body {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    display: block;
     width: 1.8rem;
     height: 1.8rem;
     background: url('../images/inpCheck.png') no-repeat;
@@ -2197,14 +2110,14 @@ body {
     display: block;
     width: 100%;
     background-color: #fff;
+    color: #000;
     font-size: 2rem;
     font-weight: 400;
-    color: #000;
-    letter-spacing: -0.05rem;
     line-height: 1;
+    letter-spacing: -0.05rem;
     text-align: center;
     padding: 2rem;
-    border: 1px solid #ddd;
+    border: 0.1rem solid #bbb;
     transition: background-color 0.3s;
 }
 
@@ -2228,12 +2141,11 @@ body {
     height: 23.5rem;
 }
 
-
 .review-box {
     position: relative;
     display: block;
     width: 30rem;
-    height: 100%;
+    height: 28.5rem;
 }
 
 .review-box-title {
@@ -2248,26 +2160,27 @@ body {
     margin-bottom: 2.5rem;
 }
 
+.review-box-title b {
+    font-weight: 700;
+}
+
 .review-box-title::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
+    display: block;
     width: 2rem;
     height: 0.2rem;
     background: #707070;
 }
 
-.review-box-title b {
-    font-weight: 700;
-}
-
 .review-box-txt {
     position: relative;
     display: block;
+    color: #000;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #000;
     letter-spacing: -0.0375rem;
     line-height: 1.6;
     margin-bottom: 2.5rem;
@@ -2316,32 +2229,34 @@ body {
     left: 2.6rem;
     top: 0;
     width: 9rem;
+    color: #bbb;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: -0.04rem;
-    color: #bbb;
 }
 
 .sw-review-pg .swiper-pagination-current {
-    color: #222;
     font-weight: 700;
+    color: #222;
 }
 
 .review-slide {
     position: relative;
     display: block;
     width: 90rem;
-    height: 100%;
+    height: 28.5rem;
 }
 
-.sw-review {}
+.sw-review {
+    height: 100%;
+}
 
 .review-list {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background: #fff;
     padding: 3.5rem 2rem;
 }
 
@@ -2351,14 +2266,15 @@ body {
     margin-bottom: 3rem;
 }
 
-.review-list-name {
+.review-list-title {
     display: block;
     width: 16.5rem;
+    color: #000;
     font-size: 1.7rem;
     font-weight: 700;
-    color: #000;
-    letter-spacing: -0.0425rem;
     line-height: 1.47;
+    letter-spacing: -0.0425rem;
+    cursor: pointer;
 
     /* 한줄 말줄임 */
     overflow: hidden;
@@ -2368,14 +2284,15 @@ body {
     margin-bottom: 0.5rem;
 }
 
+
 .review-list-rating {
     display: block;
     width: 5rem;
+    color: #000;
     font-size: 1.7rem;
     font-weight: 500;
-    color: #000;
-    letter-spacing: -0.0425rem;
     line-height: 1.176;
+    letter-spacing: -0.0425rem;
     background: url('../images/icoRating.png') no-repeat left center;
     padding-left: 2.5rem;
     white-space: nowrap;
@@ -2397,6 +2314,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+
 }
 
 .review-list-txt {
@@ -2404,13 +2322,14 @@ body {
     display: block;
     width: 100%;
     height: 6rem;
+
+    color: #000;
     font-size: 1.3rem;
     font-weight: 400;
+    line-height: 1.5;
     letter-spacing: -0.0325rem;
-    line-height: 1.538;
-    color: #000;
 
-    /* 크롬에서 줄내림 ... 처리 */
+    /* 크롬에서 줄내림 ... 처리  */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -2420,6 +2339,7 @@ body {
     white-space: normal;
 
     margin-bottom: 2rem;
+    cursor: pointer;
 }
 
 .review-list-user {
@@ -2427,9 +2347,8 @@ body {
     display: block;
     font-size: 1.3rem;
     font-weight: 400;
+    line-height: 1.4;
     letter-spacing: -0.0325rem;
-    line-height: 1.538;
-    color: #000;
 }
 
 /* 커뮤니티 영역 */
@@ -2445,30 +2364,30 @@ body {
     table-layout: fixed;
 }
 
-.com-box {
+.comm-box {
     position: relative;
     display: table-cell;
     width: 40rem;
-    border-right: 1px solid #e4e4e4;
+    border-right: 0.1rem solid #e5e5e5;
     padding: 0 3.5rem;
 }
 
-.com-box:last-child {
+.comm-box:last-child {
     border-right: 0;
 }
 
-.com-title {
+.comm-title {
     position: relative;
     display: block;
+    color: #000;
     font-size: 2rem;
     font-weight: 700;
-    color: #000;
-    letter-spacing: -0.05rem;
     line-height: 1.45;
-
+    letter-spacing: -0.05rem;
 }
 
-/* 탭메뉴 포커스  */
+
+/* 탭메뉴 포커스 */
 .tab-menu {
     display: inline-block;
     color: #999;
@@ -2476,29 +2395,30 @@ body {
     cursor: pointer;
 }
 
-.tab-menu-bar {
-    position: relative;
-    display: inline-block;
-    width: 0.1rem;
-    height: 1.8rem;
-    background-color: #e5e5e5;
-    margin: 0 1rem;
-    vertical-align: -0.2rem;
-}
-
 .tab-menu-active {
     color: #000;
     font-weight: 700;
 }
 
-.com-news-wrap {
+.tab-menu-bar {
+    position: relative;
+    display: inline-block;
+    width: 0.1rem;
+    height: 1.8rem;
+    background: #e5e5e5;
+    margin: 0 1rem;
+    vertical-align: -0.2rem;
+}
+
+.comm-news-wrap {
     position: relative;
     display: block;
     margin-top: 3rem;
 }
 
 /* 탭 메뉴 내용 리스트 */
-.com-news-list {
+
+.comm-news-list {
     position: absolute;
     left: 0;
     top: 0;
@@ -2506,103 +2426,98 @@ body {
     width: 100%;
 }
 
-.com-news-list-active {
+.comm-news-list-active {
     display: block;
 }
 
-
-.com-news-list>li {
+.comm-news-list>li {
     position: relative;
     display: block;
     overflow: hidden;
-
     margin-bottom: 1.5rem;
 }
 
-.com-news-list>li>a {
+.comm-news-list>li>a {
     display: block;
     float: left;
+    color: #000;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #000;
-    letter-spacing: -0.0325rem;
     line-height: 1.461;
+    letter-spacing: -0.0325rem;
 }
 
-.com-news-list>li>span {
+.comm-news-list>li>span {
     display: block;
     float: right;
+    color: #999;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #999;
-    letter-spacing: -0.0325rem;
     line-height: 1.461;
+    letter-spacing: -0.0325rem;
 }
 
-.com-tel {
+.comm-tel {
     display: block;
     margin-top: 1.5rem;
+
+    color: #76bd42;
     font-size: 3.2rem;
     font-weight: 700;
-    color: #76bd42;
-    letter-spacing: normal;
     line-height: 1.187;
+    letter-spacing: 0;
 }
 
-.com-info {
+.comm-info {
     display: block;
     margin-top: 1rem;
 
+    color: #000;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #000;
-
+    line-height: 1.4615;
     letter-spacing: -0.0325rem;
-    line-height: 1.461;
 }
 
-.com-info em {
+.comm-info em {
     color: #666;
-    font-weight: 400;
     font-style: normal;
+    font-weight: 400;
 }
 
-.com-info a {
+.comm-info a {
     font-weight: 700;
 }
 
-.com-info b {
+.comm-info b {
     font-weight: 700;
 }
 
-.com-link-wrap {
+.comm-link-wrap {
     position: relative;
     display: block;
     margin-top: 1.5rem;
 }
 
-.com-link-wrap a {
+.comm-link-wrap a {
     display: block;
     float: left;
     width: 48.5%;
     margin-right: 2.5%;
-
     padding: 0 1.3rem;
     line-height: 3.8rem;
-    border: 1px solid #e4e4e4;
+    border: 0.1rem solid #e5e5e5;
     background: url('../images/icoFaq.png') no-repeat;
-
     background-position: calc(100% - 1.3rem) 50%;
-
     margin-bottom: 1rem;
 
+    color: #333;
     font-size: 1.3rem;
     font-weight: 500;
-    color: #333;
     letter-spacing: -0.0325rem;
 }
 
-.com-link-wrap a:nth-child(2n) {
+.comm-link-wrap a:nth-child(2n) {
     margin-right: 0;
 }
 
@@ -2615,15 +2530,14 @@ body {
 .footer-top {
     position: relative;
     display: block;
-    border-top: 1px solid #f1f1f1;
-    border-bottom: 1px solid #f1f1f1;
+    border-top: 0.1rem solid #f1f1f1;
+    border-bottom: 0.1rem solid #f1f1f1;
 }
 
 .footer-menu {
     position: relative;
     display: block;
     float: left;
-
     overflow: hidden;
 }
 
@@ -2642,7 +2556,7 @@ body {
     transform: translateY(-50%);
     width: 0.2rem;
     height: 0.2rem;
-    background-color: #a8afb7;
+    background: #a9b0b8;
 }
 
 .footer-menu>li:first-child {
@@ -2658,12 +2572,11 @@ body {
 }
 
 .footer-menu>li>a {
-    display: block;
+    color: #000;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #000;
+    line-height: 1.461;
     letter-spacing: -0.0325rem;
-    line-height: 1.4615;
 }
 
 .sitemap {
@@ -2675,11 +2588,11 @@ body {
 
 .sitemap a {
     display: block;
+    color: #666;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #666;
+    line-height: 1.461;
     letter-spacing: -0.0325rem;
-    line-height: 1.4615;
 }
 
 .sitemap a span {
@@ -2713,11 +2626,11 @@ body {
 
 .copy-list {
     display: block;
+    color: #666;
     font-size: 0;
     font-weight: 400;
-    color: #666;
+    line-height: 1.692;
     letter-spacing: -0.0325rem;
-    line-height: 1.69;
 }
 
 .copy-list span,
@@ -2752,7 +2665,7 @@ body {
     display: block;
     width: 0.1rem;
     height: 1rem;
-    background-color: #e4e4e4;
+    background: #e5e5e5;
 }
 
 .copy-list .no-sp {
@@ -2768,11 +2681,11 @@ body {
 }
 
 .copy p {
+    color: #999;
     font-size: 1.1rem;
     font-weight: 400;
-    color: #999;
-    letter-spacing: -0.0275rem;
     line-height: 1.45;
+    letter-spacing: -0.0275rem;
     margin-top: 3rem;
 }
 
@@ -2812,63 +2725,4 @@ body {
 
 .sns .i-kk {
     background-position: 0 -10.4rem;
-}
-
-.sitemap-active {
-    background-color: #f4f4f4 !important;
-}
-
-.allmap {
-    position: absolute;
-    left: 0;
-    bottom: 100%;
-    display: block;
-    width: 100%;
-    background-color: #f4f4f4;
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-
-    display: none;
-}
-
-.allmap .container {    
-}
-
-.allmap-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 2.4rem;
-    height: 2.4rem;
-    background: url('../images/btnFamilyClose.png') no-repeat center;
-    cursor: pointer;
-    border: 0;
-    font-size: 0;
-}
-
-.allmap-list {
-    overflow: hidden;
-}
-.allmap-list > li {
-    float: left;
-    width: 20%;
-}
-.allmap-list p {
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.2rem;
-    color: #76bd42;
-    letter-spacing: -0.0375rem;
-    margin-bottom: 1.4rem;
-}
-.allmap-list > li > ul {}
-.allmap-list > li > ul > li {}
-.allmap-list > li > ul > li > a {
-    display: inline-block;
-    line-height: 2.2rem;
-    color: #000;
-    font-size: 1.3rem;
-    letter-spacing: -0.0325rem;
-    font-weight: 400;
-
 }
