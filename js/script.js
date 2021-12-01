@@ -1,6 +1,24 @@
 // html 이 준비가 되면 실행한다.
 $(document).ready(function () {
 
+    let modal = $('.modal');
+    let modal_cont = $('.modal-cont');
+    let modal_close = $('.modal-close');
+    let modal_show = $('.modal-show');
+
+    modal.fadeIn();
+    modal_close.click(function () {
+        modal.fadeOut();
+    });
+
+    modal.click(function () {
+        modal.fadeOut();
+    });
+
+    modal_cont.click(function (event) {
+        event.stopPropagation();
+    });
+
     // 상단 고정 메뉴 기능
     // 1    오른쪽에 있는 스크롤바가 몇 픽셀 내려왔는지
     let scroll_y = $(window).scrollTop();
